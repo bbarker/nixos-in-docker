@@ -1,0 +1,7 @@
+FROM nixos_base:17.03
+ENV PATH /run/current-system/systemd/lib/systemd \
+    LOCALE_ARCHIVE=/run/current-system/sw/lib/locale/locale-archive
+COPY NixContainerStartup.sh /
+
+ENTRYPOINT ["/NixContainerStartup.sh"]
+# ENTRYPOINT ["/run/current-system/systemd/lib/systemd/systemd"]
